@@ -39,14 +39,14 @@ bar_positions = np.arange(len(characters))
 
 def update(frame):
     ax.clear()
-    month = frame + 1
+    month = str(frame + 1)
     plt.title(f'One Piece Characters Popularity in {month}')
     plt.xlabel('Characters')
     plt.ylabel('Popularity')
 
     for i, character in enumerate(characters):
         popularity = popularity_data[month][i]
-        ax.bar(character, popularity, color=bar_colors[i], width=bar_width, align='center')
+        ax.bar(character, popularity, color=bar_colors[character], width=bar_width, align='center')
 
 
 animation = FuncAnimation(fig, update, frames=len(popularity_data), interval=1000, repeat=False)
