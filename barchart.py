@@ -23,7 +23,16 @@ characters, popularity_data = file_reader.read_data()
 
 fig, ax = plt.subplots()
 bar_width = 0.2
-bar_colors = {'Monkey D. Luffy': '#FF0000', 'Roronoa Zoro': '#008000', 'Nami': '#1E90FF'}
+bar_colors = {
+    'Monkey D. Luffy': '#FF0000',
+    'Roronoa Zoro': '#008000',
+    'Nami': '#1E90FF',
+    'Charlotte Katakuri': '#8B0000',
+    'Boa Hancock': '#9370D8',
+    'Kaido': '#0000CD',
+    'Nico Robin': '#FF69B4',
+    'Sanji': '#FFD700'
+}
 bar_positions = np.arange(len(characters))
 
 
