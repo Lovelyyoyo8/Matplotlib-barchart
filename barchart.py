@@ -2,21 +2,23 @@ from data_define import Record
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+
 from matplotlib.animation import FuncAnimation
 
+file_path = r'F:\Downloads\One Piece Popularity 2019.xlsx'
 
-file_path = r'F:\Downloads\One Piece Popularity 2018-10 to 2019-12.xlsx'
 
 class FileReader:
     def __init__(self, path):
         self.path = path
 
     def read_data(self) -> list[Record]:
-        df = pd.read_excel(self.path, index_col=0)  # Assuming dates are in the first column
+        df = pd.read_excel(self.path, index_col=0)
         characters = df.columns.tolist()
-        popularity_data = {str(year): df[year].tolist() for year in df.columns}
+        popularity_data = {str(month): df[month].tolist() for month in range(2, 13)}
 
         return characters, popularity_data
+
 
 file_reader = FileReader(file_path)
 characters, popularity_data = file_reader.read_data()
@@ -38,13 +40,13 @@ bar_positions = np.arange(len(characters))
 
 def update(frame):
     ax.clear()
-    year = str(2018-10 + frame)
-    plt.title(f'One Piece Characters Popularity in {year}')
+    month = frame + 1
+    plt.title(f'One Piece Characters Popularity in {month}')
     plt.xlabel('Characters')
     plt.ylabel('Popularity')
 
     for i, character in enumerate(characters):
-        popularity = popularity_data[year][i]
+        popularity = popularity_data[month][i]
         ax.bar(character, popularity, color=bar_colors[i], width=bar_width, align='center')
 
 
