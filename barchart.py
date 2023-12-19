@@ -2,7 +2,6 @@ from data_define import Record
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
 from matplotlib.animation import FuncAnimation
 
 file_path = r'F:\Downloads\One Piece Popularity 2019.xlsx'
