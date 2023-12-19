@@ -1,21 +1,25 @@
+from data_define import Record
+import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
 
-characters = ['Nami', 'Zoro', 'Luffy']
-popularity_data = {
-    '2010': [60, 75, 80],
-    '2011': [65, 80, 85],
-    '2012': [70, 85, 90],
-    '2013': [72, 88, 92],
-    '2014': [75, 90, 95],
-    '2015': [78, 92, 98],
-    '2016': [76, 91, 97],
-    '2017': [74, 89, 94],
-    '2018': [73, 88, 93],
-    '2019': [77, 93, 99],
-    '2020': [89, 95, 102],
-}
+
+file_path = r'F:\Downloads\One Piece Popularity 2018-10 to 2019-12.xlsx'
+
+class FileReader:
+    def __init__(self, path):
+        self.path = path
+
+    def read_data(self) -> list[Record]:
+        df = pd.read_excel(self.path, index_col=0)  # Assuming dates are in the first column
+        characters = df.columns.tolist()
+        popularity_data = {str(year): df[year].tolist() for year in df.columns}
+
+        return characters, popularity_data
+
+file_reader = FileReader(file_path)
+characters, popularity_data = file_reader.read_data()
 
 fig, ax = plt.subplots()
 bar_width = 0.2
@@ -25,16 +29,16 @@ bar_positions = np.arange(len(characters))
 
 def update(frame):
     ax.clear()
-    year = str(2010 + frame)
+    year = str(2018-10 + frame)
     plt.title(f'One Piece Characters Popularity in {year}')
-    plt.xlabel('Popularity')
-    plt.ylabel('Characters')
+    plt.xlabel('Characters')
+    plt.ylabel('Popularity')
 
     for i, character in enumerate(characters):
         popularity = popularity_data[year][i]
-        ax.barh(character, popularity, color=bar_colors[i])
+        ax.bar(character, popularity, color=bar_colors[i], width=bar_width, align='center')
+
 
 animation = FuncAnimation(fig, update, frames=len(popularity_data), interval=1000, repeat=False)
 
 plt.show()
-
