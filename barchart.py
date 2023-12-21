@@ -46,6 +46,8 @@ robin_icon_url = 'https://i.pinimg.com/736x/30/88/6a/30886acd22fe6ddd35fc2efadba
 urllib.request.urlretrieve(robin_icon_url, 'robin_icon.jpg')
 katakuri_icon_url = 'https://i.pinimg.com/originals/5b/c6/9c/5bc69cae9513d474532ed7f27db6554b.jpg'
 urllib.request.urlretrieve(katakuri_icon_url, 'katakuri_icon.jpg')
+boa_icon_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFVHkPrJQ1vGEfQx0iHa6uCAag6_CMOElDTQ&usqp=CAU'
+urllib.request.urlretrieve(boa_icon_url, 'boa_icon.jpg')
 
 def update(frame):
     ax.clear()
