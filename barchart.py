@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+import urllib.request
 
 file_path = r'F:\Downloads\One Piece Popularity 2019.xlsx'
 
@@ -35,6 +36,9 @@ bar_colors = {
 }
 bar_positions = np.arange(len(characters))
 
+luffy_icon_url = 'https://i.pinimg.com/736x/b3/8c/b4/b38cb443bff8ba204fd6c2c075135d3e.jpg'
+urllib.request.urlretrieve(luffy_icon_url, 'luffy_icon.jpg')
+
 def update(frame):
     ax.clear()
     month = str(frame + 1)
@@ -47,7 +51,7 @@ def update(frame):
         bar = ax.bar(character, popularity, color=bar_colors[character], width=bar_width, align='center')
 
         # Add icons to the end of each bar
-        icon_path = f'path/to/icon/{character.lower()}_icon.png'  # Replace with the actual path to the icon
+        icon_path = f'luffy_icon.jpg' if character == 'Monkey D. Luffy' else f'path/to/icon/{character.lower()}_icon.png'
         imagebox = OffsetImage(plt.imread(icon_path), zoom=0.1, resample=True, clip_path=bar)
         ab = AnnotationBbox(imagebox, (bar[i].get_x() + bar[i].get_width(), bar[i].get_height()), frameon=False)
         ax.add_artist(ab)
