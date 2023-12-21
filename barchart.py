@@ -64,11 +64,29 @@ def update(frame):
         popularity = popularity_data[month][i]
         bar = ax.bar(character, popularity, color=bar_colors[character], width=bar_width, align='center')
 
-        # Add icons to the end of each bar
-        icon_path = f'luffy_icon.jpg' if character == 'Monkey D. Luffy' else f'path/to/icon/{character.lower()}_icon.png'
+        if character == 'Monkey D. Luffy':
+            icon_path = 'luffy_icon.jpg'
+        elif character == 'Nami':
+            icon_path = 'nami_icon.jpg'
+        elif character == 'Roronoa Zoro':
+            icon_path = 'zoro_icon.jpg'
+        elif character == 'Nico Robin':
+            icon_path = 'robin_icon.jpg'
+        elif character == 'Charlotte Katakuri':
+            icon_path = 'katakuri_icon.jpg'
+        elif character == 'Boa Hancock':
+            icon_path = 'boa_icon.jpg'
+        elif character == 'Kaido':
+            icon_path = 'kaido_icon.jpg'
+        elif character == 'Sanji':
+            icon_path = 'sanji_icon.jpg'
+        else:
+            icon_path = f'F:\Downloads\One Piece Icons\{character.lower()}_icon.png'
+
         imagebox = OffsetImage(plt.imread(icon_path), zoom=0.1, resample=True, clip_path=bar)
         ab = AnnotationBbox(imagebox, (bar[i].get_x() + bar[i].get_width(), bar[i].get_height()), frameon=False)
         ax.add_artist(ab)
+
 
 animation = FuncAnimation(fig, update, frames=len(popularity_data), interval=1000, repeat=False)
 
