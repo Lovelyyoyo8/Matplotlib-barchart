@@ -44,7 +44,8 @@ zoro_icon_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9P_G7E4p
 urllib.request.urlretrieve(zoro_icon_url, 'zoro_icon.jpg')
 robin_icon_url = 'https://i.pinimg.com/736x/30/88/6a/30886acd22fe6ddd35fc2efadba0a8d8.jpg'
 urllib.request.urlretrieve(robin_icon_url, 'robin_icon.jpg')
-
+katakuri_icon_url = 'https://i.pinimg.com/originals/5b/c6/9c/5bc69cae9513d474532ed7f27db6554b.jpg'
+urllib.request.urlretrieve(katakuri_icon_url, 'katakuri_icon.jpg')
 
 def update(frame):
     ax.clear()
