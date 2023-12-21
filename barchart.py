@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
 file_path = r'F:\Downloads\One Piece Popularity 2019.xlsx'
-
 
 class FileReader:
     def __init__(self, path):
@@ -17,7 +17,6 @@ class FileReader:
         popularity_data = {str(month): df[month].tolist() for month in range(2, 13)}
 
         return characters, popularity_data
-
 
 file_reader = FileReader(file_path)
 characters, popularity_data = file_reader.read_data()
@@ -36,7 +35,6 @@ bar_colors = {
 }
 bar_positions = np.arange(len(characters))
 
-
 def update(frame):
     ax.clear()
     month = str(frame + 1)
@@ -46,8 +44,13 @@ def update(frame):
 
     for i, character in enumerate(characters):
         popularity = popularity_data[month][i]
-        ax.bar(character, popularity, color=bar_colors[character], width=bar_width, align='center')
+        bar = ax.bar(character, popularity, color=bar_colors[character], width=bar_width, align='center')
 
+        # Add icons to the end of each bar
+        icon_path = f'path/to/icon/{character.lower()}_icon.png'  # Replace with the actual path to the icon
+        imagebox = OffsetImage(plt.imread(icon_path), zoom=0.1, resample=True, clip_path=bar)
+        ab = AnnotationBbox(imagebox, (bar[i].get_x() + bar[i].get_width(), bar[i].get_height()), frameon=False)
+        ax.add_artist(ab)
 
 animation = FuncAnimation(fig, update, frames=len(popularity_data), interval=1000, repeat=False)
 
