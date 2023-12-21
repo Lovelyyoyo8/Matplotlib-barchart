@@ -38,6 +38,9 @@ bar_positions = np.arange(len(characters))
 
 luffy_icon_url = 'https://i.pinimg.com/736x/b3/8c/b4/b38cb443bff8ba204fd6c2c075135d3e.jpg'
 urllib.request.urlretrieve(luffy_icon_url, 'luffy_icon.jpg')
+nami_icon_url = 'https://i.pinimg.com/736x/30/b5/f6/30b5f66efe7cc5311c757fd7074307b6.jpg'
+urllib.request.urlretrieve(nami_icon_url, 'nami_icon.jpg')
+
 
 def update(frame):
     ax.clear()
