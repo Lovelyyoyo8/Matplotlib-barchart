@@ -40,6 +40,10 @@ luffy_icon_url = 'https://i.pinimg.com/736x/b3/8c/b4/b38cb443bff8ba204fd6c2c0751
 urllib.request.urlretrieve(luffy_icon_url, 'luffy_icon.jpg')
 nami_icon_url = 'https://i.pinimg.com/736x/30/b5/f6/30b5f66efe7cc5311c757fd7074307b6.jpg'
 urllib.request.urlretrieve(nami_icon_url, 'nami_icon.jpg')
+zoro_icon_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9P_G7E4pvDVbLpFPdpK-Fe1jRXKOjlj5h4g&usqp=CAU'
+urllib.request.urlretrieve(zoro_icon_url, 'zoro_icon.jpg')
+robin_icon_url = 'https://i.pinimg.com/736x/30/88/6a/30886acd22fe6ddd35fc2efadba0a8d8.jpg'
+urllib.request.urlretrieve(robin_icon_url, 'robin_icon.jpg')
 
 
 def update(frame):
