@@ -48,6 +48,10 @@ katakuri_icon_url = 'https://i.pinimg.com/originals/5b/c6/9c/5bc69cae9513d474532
 urllib.request.urlretrieve(katakuri_icon_url, 'katakuri_icon.jpg')
 boa_icon_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFVHkPrJQ1vGEfQx0iHa6uCAag6_CMOElDTQ&usqp=CAU'
 urllib.request.urlretrieve(boa_icon_url, 'boa_icon.jpg')
+kaido_icon_url = 'https://i.pinimg.com/736x/7b/0e/69/7b0e69aa7de0a3c43176eabc8744ac0b.jpg'
+urllib.request.urlretrieve(kaido_icon_url, 'kaido_icon.jpg')
+sanji_icon_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqXTM93hPP1a9YjMzlm4HgIkQbPavfOv0EIg&usqp=CAU'
+urllib.request.urlretrieve(sanji_icon_url, 'sanji_icon.jpg')
 
 def update(frame):
     ax.clear()
