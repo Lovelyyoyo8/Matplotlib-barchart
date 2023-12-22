@@ -19,6 +19,7 @@ class FileReader:
 
         return characters, popularity_data
 
+
 file_reader = FileReader(file_path)
 characters, popularity_data = file_reader.read_data()
 
