@@ -65,21 +65,21 @@ def update(frame):
         bar = ax.bar(character, popularity, color=bar_colors[character], width=bar_width, align='center')
 
         if character == 'Monkey D. Luffy':
-            icon_path = 'luffy_icon.jpg'
+            icon_path = 'luffy.jpg'
         elif character == 'Nami':
-            icon_path = 'nami_icon.jpg'
+            icon_path = 'nami.jpg'
         elif character == 'Roronoa Zoro':
-            icon_path = 'zoro_icon.jpg'
+            icon_path = 'zoro.jpg'
         elif character == 'Nico Robin':
-            icon_path = 'robin_icon.jpg'
+            icon_path = 'robin.jpg'
         elif character == 'Charlotte Katakuri':
-            icon_path = 'katakuri_icon.jpg'
+            icon_path = 'katakuri.jpg'
         elif character == 'Boa Hancock':
-            icon_path = 'boa_icon.jpg'
+            icon_path = 'boa.jpg'
         elif character == 'Kaido':
-            icon_path = 'kaido_icon.jpg'
+            icon_path = 'kaido.jpg'
         elif character == 'Sanji':
-            icon_path = 'sanji_icon.jpg'
+            icon_path = 'sanji.jpg'
         else:
             icon_path = f'F:\Downloads\One Piece Icons\{character.lower()}_icon.png'
 
