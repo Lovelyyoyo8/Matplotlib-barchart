@@ -15,7 +15,7 @@ class FileReader:
     def read_data(self) -> list[Record]:
         df = pd.read_excel(self.path, index_col=0)
         characters = df.columns.tolist()
-        popularity_data = {str(month): df[month].tolist() for month in range(2, 13)}
+        popularity_data = {str(month): df[month].tolist() for month in range(1, 12)}
 
         return characters, popularity_data
 
