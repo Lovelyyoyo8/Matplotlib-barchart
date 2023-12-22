@@ -6,5 +6,5 @@ Targets:
 1. more characters Y
 2. real data Y
 3. date data Y
-4. add the character's icon by the side
+4. add the character's icon by the side Y
 5. add scene pic by the side
