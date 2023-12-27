@@ -88,6 +88,13 @@ def update(frame):
         ab = AnnotationBbox(imagebox, (bar[i].get_x() + bar[i].get_width(), bar[i].get_height()), frameon=False)
         ax.add_artist(ab)
 
+# right corner picture 
+image_path = 'https://www.upmedia.mg/upload/article/20220607135343933106.png'
+image = plt.imread(image_path)
+imagebox = OffsetImage(image, zoom=0.1)
+# xy = (1.02, 0.95)
+# ab = AnnotationBbox(imagebox, xy, xycoords='axes fraction', boxcoords="axes fraction", frameon=False)
+# ax.add_artist(ab)
 
 animation = FuncAnimation(fig, update, frames=len(popularity_data), interval=1000, repeat=False)
 
