@@ -8,4 +8,4 @@ Steps:
 3. date data Y
 4. add the character's icon by the side Y
 5. add scene pic by the side
-6. Excel data is not showing here, maybe I can use MySQL to show it
+
