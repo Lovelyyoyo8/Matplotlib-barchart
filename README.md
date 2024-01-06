@@ -1,5 +1,5 @@
 # Matplotlib-barchart
-Onepiece characters popularity
+One Piece characters popularity
 I saw the barchart video on YouTube and it's quite interesting. So I think maybe I can try in Python.
 Animation is cool that make it moves. 
 Steps:
