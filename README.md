@@ -1,6 +1,6 @@
 # Matplotlib-barchart
 One Piece Characters Popularity
-I saw the barchart video on YouTube and it's quite interesting. So I think maybe I can try in Python.
+I saw the barchart video on YouTube which is quite interesting. So I think maybe I can try in Python.
 Animation is cool that make it moves. 
 Steps:
 1. more characters Y
